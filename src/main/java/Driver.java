@@ -21,7 +21,6 @@ public class Driver {
         AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
         driver.findElement(By.xpath(Elements.homeBtn)).click();
         driver.findElement(By.xpath(Elements.assetMngr)).click();
         driver.findElement(By.xpath(Elements.bitcoinBtn)).click();
@@ -29,15 +28,12 @@ public class Driver {
         driver.findElement(By.xpath(Elements.dogecoinBtn)).click();
         driver.findElement(By.xpath(Elements.closeMngr)).click();
 
-        if (driver.findElement(By.xpath(Elements.dogecoinTxt)).isDisplayed() && !driver.findElement(By.xpath(Elements.bitcoinBtn)).isDisplayed()) {
+        if (driver.findElement(By.xpath(Elements.dogecoinTxt)).isDisplayed() && !driver.findElement(By.xpath(Elements.bitcoincoinTxt)).isDisplayed()) {
             testResults = "Test Passed";
-
         }
         else
         {
             testResults = "Test Failed";
-
-
         }
         System.out.println(testResults);
     }
